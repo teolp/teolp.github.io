@@ -3,40 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Central de Soporte y Desarrollo - Mateo</title>
+    <title>Mateo Lozano | Central de Ingeniería & TI</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f9; color: #333; margin: 0; padding: 20px; }
-        header { background: linear-gradient(135deg, #0056b3, #00bfff); color: white; padding: 30px; text-align: center; border-radius: 10px; margin-bottom: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        h2 { color: #0056b3; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        pre { background: #272822; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: 'Consolas', monospace; }
-        .emoji-list { list-style: none; padding: 0; }
-        .emoji-list li { padding: 10px 0; border-bottom: 1px solid #eee; }
+        :root {
+            --bg-principal: #0f172a;
+            --bg-tarjeta: #1e293b;
+            --texto-principal: #f8fafc;
+            --texto-secundario: #94a3b8;
+            --azul-branding: #38bdf8;
+            --verde-exito: #4ade80;
+            --codigo-bg: #020617;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--bg-tarjeta);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid #334155;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: var(--azul-branding);
+        }
+
+        header p {
+            color: var(--texto-secundario);
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: var(--texto-secundario);
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        nav button:hover {
+            color: var(--azul-branding);
+            background-color: #334155;
+        }
+
+        nav button.active {
+            color: var(--azul-branding);
+            border-bottom: 3px solid var(--azul-branding);
+            background-color: #0f172a;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
+            flex: 1;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--bg-tarjeta);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: var(--azul-branding);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        pre {
+            background-color: var(--codigo-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid #1e293b;
+            color: #e2e8f0;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            background-color: #334155;
+            color: var(--azul-branding);
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--bg-tarjeta);
+            border-top: 1px solid #334155;
+            color: var(--texto-secundario);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🚀 Mi Central de TI & Desarrollo</h1>
-            <p>Espacio para documentación de scripts, automatización en Windows y plantillas de Mesa de Ayuda</p>
-        </header>
 
-        <!-- SECCIÓN DE SCRIPTS -->
-        <div class="card">
-            <h2>🛠️ Scripts de Optimización (PowerShell)</h2>
-            <p>Comando rápido para ejecutar el mantenimiento preventivo básico en laboratorios:</p>
-            <pre>powershell.exe -ExecutionPolicy Bypass -File .\Mantenimiento_USB.ps1</pre>
+    <header>
+        <h1>⚡ Central de Ingeniería & Operaciones TI</h1>
+        <p>Ecosistema de Automatización, Análisis de Datos y Gestión de Servicios Tecnológicos</p>
+    </header>
+
+    <nav>
+        <button class="tab-link active" onclick="openTab(event, 'soporte')">📩 Mesa de Servicio</button>
+        <button class="tab-link" onclick="openTab(event, 'scripting')">🛠️ Scripting Windows</button>
+        <button class="tab-link" onclick="openTab(event, 'data')">📊 Data Analytics & SQL</button>
+        <button class="tab-link" onclick="openTab(event, 'linux')">🐧 Lab Linux Debian</button>
+    </nav>
+
+    <div class="main-content">
+
+        <!-- SECCIÓN 1: MESA DE SERVICIO -->
+        <div id="soporte" class="tab-content active">
+            <h2>📩 Gestión de Canales y Comunicación Empática</h2>
+            <p style="color: var(--texto-secundario);">Plantillas estructuradas listas para el despliegue de soluciones a la comunidad universitaria.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>👋 Gestión de Accesos (Estudiantes)</h3>
+                    <p>Plantilla con validación de identidad e inclusión explícita del correo institucional.</p>
+                    <pre>¡Hola, [Nombre]! 👋 Un saludo del equipo de Soporte. ¡Ya lo solucionamos! 🛠️&#10;&#10;📧 Tu correo exacto es: [correo_estudiante]&#10;🔑 Clave temporal: [clave]&#10;🌐 Link de acceso: [enlace]&#10;&#10;¡Éxitos en tus clases! 🚀</pre>
+                </div>
+                <div class="card">
+                    <h3>🏫 Cierre de Casos de Infraestructura (Docentes)</h3>
+                    <p>Notificación optimizada tras intervenciones físicas en aulas o laboratorios académicos.</p>
+                    <pre>¡Hola, Profesor/a [Apellido]! 👋 El sistema de proyección/conectividad en el Aula [Número] ya se encuentra 100% operativo. 💻✨ Realizamos las pruebas físicas correspondientes y todo marcha perfecto. ¡Excelente jornada académica! 🌟</pre>
+                </div>
+            </div>
         </div>
 
-        <!-- SECCIÓN DE PLANTILLAS -->
-        <div class="card">
-            <h2>📩 Plantillas Empáticas - Mesa de Ayuda</h2>
-            <ul class="emoji-list">
-                <li><strong>👋 Saludo Estudiantes:</strong> "¡Hola, [Nombre]! Te saludamos desde el equipo de Soporte Técnico... 💻✨"</li>
-                <li><strong>🔐 Restablecimiento:</strong> "Recordamos tu correo institucional: [correo]. Tu clave temporal es..."</li>
-            </ul>
+        <!-- SECCIÓN 2: SCRIPTING WINDOWS -->
+        <div id="scripting" class="tab-content">
+            <h2>🛠️ Repositorio de Automatización Corporativa (PowerShell)</h2>
+            <p style="color: var(--texto-secundario);">Herramientas avanzadas de administración de sistemas e infraestructura local.</p>
+            <div class="card">
+                <h3>🚀 Optimizador Avanzado e Institucional <span class="badge">v2.0</span></h3>
+                <p>Script completo de mantenimiento de discos (TRIM/Defrag), limpieza profunda de DNS, colas de impresión, cachés dinámicas de navegadores y generación de reportes automáticos en <code>C:\</code>.</p>
+                <pre># Ejecutar directamente desde la consola como Administrador:&#10;powershell.exe -ExecutionPolicy Bypass -File .\Optimizador_Avanzado.ps1</pre>
+                <p style="color: var(--azul-branding); font-size: 0.9rem;">*El archivo de código fuente completo está documentado de manera segura dentro de la infraestructura del repositorio.</p>
+            </div>
         </div>
+
+        <!-- SECCIÓN 3: DATA ANALYTICS & SQL -->
+        <div id="data" class="tab-content">
+            <h2>📊 Arquitectura de Datos & Modelado Relacional</h2>
+            <p style="color: var(--texto-secundario);">Estructuración de datos analíticos para la toma de decisiones y modelos deportivos predictivos.</p>
+            <div class="grid">
+                <div class="card">
+                    <h3>⚽ Data Warehouse Deportivo</h3>
+                    <p>Diseño de esquema relacional para análisis estadístico de fútbol y simulaciones mediante algoritmos probabilísticos (Criterio de Kelly).</p>
+                    <pre>CREATE TABLE Partidos (&#10;    id_partido INT PRIMARY KEY,&#10;    equipo_local VARCHAR(50),&#10;    equipo_visitante VARCHAR(50),&#10;    goles_local INT,&#10;    goles_visitante INT,&#10;    probabilidad_esperada DECIMAL(5,2)&#10;);</pre>
+                </div>
+                <div class="card">
+                    <h3>📈 Modelado de Incidentes de TI</h3>
+                    <p>Estructura de tablas SQL para la minería de datos de la Mesa de Ayuda, permitiendo identificar patrones de fallas repetitivas en hardware.</p>
+                    <pre>SELECT aula, COUNT(id_ticket) AS Fallas_Reportadas&#10;FROM Tickets_TI&#10;WHERE estado = 'Cerrado'&#10;GROUP BY aula&#10;ORDER BY Fallas_Reportadas DESC;</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4: LAB LINUX DEBIAN -->
+        <div id="linux" class="tab-content">
+            <h2>🐧 Servidores de Infraestructura Local & Nube</h2>
+            <p style="color: var(--texto-secundario);">Configuración y despliegue de entornos Unix seguros para la administración de sistemas.</p>
+            <div class="card">
+                <h3>🔒 Endurecimiento de Servidores (Debian Server)</h3>
+                <p>Configuración esencial para despliegue de VPS o máquinas virtuales locales con acceso SSH securizado y firewalls robustos.</p>
+                <pre># Actualización e instalación de componentes esenciales&#10;sudo apt update && sudo apt upgrade -y&#10;sudo apt install ufw fail2ban openssh-server -y&#10;&#10;# Habilitar políticas básicas de Firewall corporativo&#10;sudo ufw allow 22/tcp&#10;sudo ufw allow 80/tcp&#10;sudo ufw enable</pre>
+            </div>
+        </div>
+
     </div>
+
+    <footer>
+        <p>© 2026 Mateo Lozano. Diseñado con altos estándares de Ingeniería de Software & TI.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+            }
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).className += " active";
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
 </html>
